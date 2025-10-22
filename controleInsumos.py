@@ -1,3 +1,10 @@
+# Autores (Grupo)
+#Adolfo Kentaro Hada** RM:556884
+#Bruno Otavio Silva de Oliveira** RM:556196
+#Guilherme Flores Pereira de Almeida** RM:554948
+#Luiz Fernando de Aragão Souza** RM:555561
+#Marcello de Freitas Moreira** RM:557531
+
 # Cada insumo: [reagente_usado, descartavel_usado]
 insumos_por_exame = [[2, 3], [3, 4], [4, 5]]  # consumo de recursos
 beneficios = [30, 50, 70]  # benefício em economia/eficiência
@@ -61,3 +68,4 @@ print("Benefício máximo (Iterativo):", iter_result)
 
 assert memo_result == iter_result, "As versões não coincidem!"
 print("\nAmbas as versões retornam o mesmo resultado!")
+
