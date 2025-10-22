@@ -4,7 +4,6 @@ beneficios = [30, 50, 70]  # benefício em economia/eficiência
 estoque_disp = [7, 9]  # reagentes e descartáveis disponíveis
 
 #  MEMOIZAÇÃO (Top-Down)
-
 def get_max_beneficio_memo(beneficios, insumos_por_exame, estoque_disp):
     cache = {}
     max_idx = len(beneficios) - 1
@@ -22,21 +21,20 @@ def rec_max(beneficios, insumos_por_exame, estoque_disp, idx_exame, cache):
     reag, desc = insumos_por_exame[idx_exame]
     solutions = []
     
-    # Tentar fazer o exame (se houver estoque)
+    # continua exame
     if reag <= estoque_disp[0] and desc <= estoque_disp[1]:
         sobrou = [estoque_disp[0] - reag, estoque_disp[1] - desc]
         sol1 = beneficios[idx_exame] + rec_max(beneficios, insumos_por_exame, sobrou, idx_exame, cache)
         solutions.append(sol1)
     
-    # Tentar ignorar o exame atual
     sol2 = rec_max(beneficios, insumos_por_exame, estoque_disp, idx_exame - 1, cache)
     solutions.append(sol2)
     
     cache[cache_key] = max(solutions)
     return cache[cache_key]
 
-# ITERATIVA (Bottom-Up)
 
+# ITERATIVA (Bottom-Up)
 def get_max_beneficio_iterativo(beneficios, insumos_por_exame, estoque_disp):
     max_reag, max_desc = estoque_disp
     dp = [[0] * (max_desc + 1) for _ in range(max_reag + 1)]
