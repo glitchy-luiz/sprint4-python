@@ -28,7 +28,7 @@ Assim, o sistema busca:
 
 O projeto implementa **duas versões** da solução usando **Programação Dinâmica**:
 
-### Recursiva com Memoização (Top-Down)
+### Recursiva com Memorização
 
 A função é chamada recursivamente para avaliar **todas as combinações possíveis** de uso de insumos.  
 Com o uso de **memoização**, os resultados de subproblemas já resolvidos são armazenados em cache, evitando recomputações desnecessárias.
@@ -50,7 +50,7 @@ def get_max_beneficio_memo(beneficios, insumos_por_exame, estoque_disp):
 
 ---
 
-### Iterativa (Bottom-Up)
+### Iterativa
 
 A versão iterativa cria uma **tabela de estados possíveis (`dp`)**, onde cada célula representa o **melhor benefício possível** dado um nível de estoque de reagentes e descartáveis.
 
@@ -93,8 +93,8 @@ assert memo_result == iter_result, "As versões não coincidem!"
 Saída esperada:
 
 ```
-Benefício máximo (Memoização): 140
-Benefício máximo (Iterativo): 140
+Benefício máximo (Memoização): 120
+Benefício máximo (Iterativo): 120
 
 Ambas as versões retornam o mesmo resultado!
 ```
@@ -139,7 +139,12 @@ Com base nesses algoritmos, é possível evoluir o projeto para incluir:
 
 ### Autores (Grupo)
 **Adolfo Kentaro Hada** RM:556884
+
 **Bruno Otavio Silva de Oliveira** RM:556196
+
 **Guilherme Flores Pereira de Almeida** RM:554948
+
 **Luiz Fernando de Aragão Souza** RM:555561
+
 **Marcello de Freitas Moreira** RM:557531
+
